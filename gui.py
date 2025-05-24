@@ -160,7 +160,7 @@ class PhotoOrganizerGUI:
         # Pack elements from bottom up, so they are guaranteed to be visible
 
         # Footer
-        ttk.Label(self.app, text="Created with 🧠 using Python & ttkbootstrap", font=("Segoe UI", 9, "italic"),
+        ttk.Label(self.app, text="Sorting Made Easier", font=("Segoe UI", 9, "italic"),
                   bootstyle="info").pack(side=BOTTOM, pady=5)
 
         # Control Buttons
