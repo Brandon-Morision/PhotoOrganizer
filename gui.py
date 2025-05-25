@@ -20,7 +20,7 @@ class Tooltip:
         self.y = 0
         self.widget.bind("<Enter>", self.enter)
         self.widget.bind("<Leave>", self.leave)
-        self.widget.bind("<ButtonPress>", self.leave) # Hide on click
+        self.widget.bind("<ButtonPress>", self.leave) # Hides on click
 
     def enter(self, event=None):
         self.schedule()
@@ -157,15 +157,14 @@ class PhotoOrganizerGUI:
 
 
         # --- BOTTOM ELEMENTS: Footer, Control Buttons, Progress Bar, Log ---
-        # Pack elements from bottom up, so they are guaranteed to be visible
-
+        
         # Footer
         ttk.Label(self.app, text="Sorting Made Easier", font=("Segoe UI", 9, "italic"),
                   bootstyle="info").pack(side=BOTTOM, pady=5)
 
         # Control Buttons
         control_buttons_frame = ttk.Frame(self.app, padding=10)
-        control_buttons_frame.pack(side=BOTTOM, pady=10) # Pack to BOTTOM first
+        control_buttons_frame.pack(side=BOTTOM, pady=10) 
 
         self.organize_button = ttk.Button(control_buttons_frame, text="🧹 Organize Now", bootstyle="success", 
                                           width=20, command=self.start_organizing_process)
@@ -180,11 +179,11 @@ class PhotoOrganizerGUI:
         # Progress Bar
         self.progress_var = tk.DoubleVar()
         self.progress_bar = ttk.Progressbar(self.app, variable=self.progress_var, maximum=100, mode="determinate", length=600, bootstyle=INFO)
-        self.progress_bar.pack(side=BOTTOM, pady=15, padx=20, fill=X) # Pack to BOTTOM, allow horizontal fill
+        self.progress_bar.pack(side=BOTTOM, pady=15, padx=20, fill=X) 
 
-        # Log Frame (This will now fill the remaining space above the fixed bottom elements)
+        # Log Frame 
         log_frame = ttk.Frame(self.app, padding=5)
-        log_frame.pack(padx=20, pady=10, fill=BOTH, expand=True) # Will expand to fill remaining space
+        log_frame.pack(padx=20, pady=10, fill=BOTH, expand=True) 
 
         self.log_box = tk.Text(log_frame, height=10, bg="#1e1e1e", fg="#c0c0c0", insertbackground="white",
                                font=("Consolas", 10), wrap=WORD, state=DISABLED) 
